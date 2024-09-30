@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Feed</title>
+    <title>Chismógrafo</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -23,7 +23,8 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="mb-4">Social Media Feed</h1>
+        <h1 class="mb-4 alert alert-success">Chismógrafo</h1>
+        <h3 class="mb-5">Donde se pasa el tiempo libre</h3>
         
         <div class="mb-3">
             <label for="sortOrder" class="form-label">Ordenar por fecha:</label>
@@ -62,10 +63,10 @@
             const sortOrder = document.getElementById('sortOrder').value;
             const userFilter = document.getElementById('userFilter').value.toLowerCase();
 
-            const sortedPosts = [...posts].sort((a, b) => {
+            const sortedPosts = [...posts].sort((a, b) => { 
                 const dateA = new Date(a.fecha + 'T' + a.hora);
                 const dateB = new Date(b.fecha + 'T' + b.hora);
-                return sortOrder === 'desc' ? dateB - dateA : dateA - dateB;
+                return sortOrder === 'desc' ? dateB - dateA : dateA - dateB; //This is Operador Ternario Beibi
             });
 
             const filteredPosts = sortedPosts.filter(post => 
